@@ -17,11 +17,13 @@
     <header class="l-header">
       <nav class="nav bd-grid">
         <a class="arrow" href="index.html"><i class='bx bxs-left-arrow-alt'></i></a>
-        <ul class="header__cart">
-          <li><a href="index.html" class="nav__logo nav__logo__cart">TEDDY</a></li>
-          <li class="nav__home"><a href="index.html" class="nav__link nav__home__cart">Home</a></li>
-          <li><i class='bx bx-cart nav__cart' ><span class="cart__number">0</span></i></li>
-        </ul>
+        <div class="cart">
+          <ul class="header__cart">
+            <li><a href="index.html" class="nav__logo nav__logo__cart">TEDDY</a></li>
+            <li class="nav__home"><a href="index.html" class="nav__link nav__home__cart">Home</a></li>
+            <li><i class='bx bx-cart nav__cart' ><span class= "cart__number_2">0</span></i></li>
+          </ul>
+      </div>
       </nav>
     </header>
 
@@ -29,11 +31,13 @@
     <div class="products__container">
       <div class="product__header">
         <h5 class="product__title">Product</h5>
-        <h5 class="price__cart">Price</h5>
+        <h5 class="price__cart">Price(Q)</h5>
         <h5 class="total">Total</h5>
       </div>
       <div class="products"></div>
     </div>
     <script src="JS/main.js" async></script>
+    <script src="JS/CallAPI.js"></script>
+    <script src="JS/single_page.js"></script>
   </body>
 </html>

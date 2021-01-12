@@ -1,3 +1,5 @@
+"use script";
+
 /* SHOW MENU */
 
 const showMenu = (toggleId, navId) => {
@@ -28,3 +30,109 @@ function linkAction() {
 }
 
 navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+/* CART */
+
+// ADD Cart Button
+
+let carts = document.querySelectorAll(".add__product"); // Add cart button
+
+for (let i = 0; i < carts.length; i++) {
+  carts[i].addEventListener("click", () => {
+    cartNumbers();
+    totalCost();
+  });
+}
+
+function onLoadCartNumber() {
+  // Number of products stay the same
+  let productNumbers = localStorage.getItem("cartNumbers");
+
+  if (productNumbers) {
+    document.querySelector(".cart span").textContent = productNumbers;
+  }
+}
+
+// Add numbers of products to cart number
+function cartNumbers(products) {
+  let productNumbers = localStorage.getItem("cartNumbers");
+  productNumbers = parseInt(productNumbers);
+
+  if (productNumbers) {
+    localStorage.setItem("cartNumbers", productNumbers + 1);
+    document.querySelector(".cart span").textContent = productNumbers + 1;
+  } else {
+    localStorage.setItem("cartNumbers", 1);
+    document.querySelector(".cart span").textContent = 1;
+  }
+
+  setItems(products);
+}
+
+// Set items inside local storage
+function setItems(products) {
+  let cartItems = localStorage.getItem("productsInCart");
+  cartItems = JSON.parse(cartItems);
+
+  if (cartItems != null) {
+    if (cartItems[getProductById.name] == undefined) {
+      cartItems = {
+        ...cartItems,
+        [getProductById.name]: getProductById,
+      };
+    }
+    cartItems[getProductById.name].inCart += 1;
+  } else {
+    getProductById.inCart = 1;
+    cartItems = {
+      [getProductById.name]: getProductById,
+    };
+  }
+  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+}
+
+function totalCost(productPrice) {
+  let cartCost = localStorage.getItem("totalCost");
+  let totalPrice = getProductById.price / 100;
+  // console.log(totalPrice);
+
+  if (cartCost != null) {
+    cartCost = parseInt(cartCost);
+    // console.log(cartCost / 100);
+    localStorage.setItem("totalCost", cartCost  + totalPrice);
+  } else {
+    localStorage.setItem("totalCost", totalPrice);
+  }
+}
+
+function displayCart() {
+  let cartItems = localStorage.getItem("productsInCart");
+  cartItems = JSON.parse(cartItems);
+  let productContainer = document.querySelector(".products");
+  let cartCost = localStorage.getItem("totalCost");
+
+  if (cartItems && productContainer) {
+    productContainer.innerHTML = "";
+    Object.values(cartItems).map((item) => {
+      productContainer.innerHTML += `
+      <div class="product__JS">
+        <i class='bx bxs-x-circle'></i>
+        <img src="${item.imageUrl}" width= 200>
+        <span class = "item__name">${item.name}</span>
+        <div class = "price">$${item.price / 100},00 (${item.inCart})</div>
+        <div class = "total__cart"> $${item.inCart * (item.price / 100)},00</div>
+        </div>
+        `;
+    });
+
+    productContainer.innerHTML += `
+      <div class = "basketTotalContainer">
+        <h4 class = "totalTitle">Basket Total</h4>
+        <h4 class = "basketTotal"> $${cartCost},00</h4>
+      </diV>
+    `;
+  }
+}
+onLoadCartNumber(); // Number of products is the same even if refreshed
+displayCart(); // Run this function straight away
+showProduct();

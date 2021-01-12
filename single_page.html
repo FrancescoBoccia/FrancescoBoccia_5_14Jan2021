@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Vente de meubles en chêne en ligne. Livraison gratuite en France et en Belgique."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- BOXICONS-->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Teddy Bear</title>
+  </head>
+
+
+  <body>
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <a class="arrow" href="index.html"><i class='bx bxs-left-arrow-alt'></i></a>
+        <div>
+          <a href="index.html"><h1 class="nav__logo logo__product-page">TEDDY</h1></a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="header__cart nav__list">
+            <li class="nav__item"><a href="index.html" class="header__title header__home nav__link active">Home</a></li>
+            <li class="nav__item"><a href="product_page.html" class="nav__link">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="cart">
+          <a href="cart.html"class="header__title header__cart-title cart__page">
+          <i class="bx bx-cart nav__cart"><span class="cart__number">0</span></i></a>
+          <i class="bx bx-menu nav__toggle" id="nav-toggle"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="product__container">
+        <img class="product__img"/>
+        <div class="product__text-container">
+          <h2 class="product__name"></h2>
+          <h3 class="product__colors-text">
+          Choose your favorite color :<select name="" id="" class="product__colors-selection"></select></h3>
+          <p class="product__details"></p>
+        </div>
+        <div class="product__cart-container">
+          <p class="product__price"></p>
+          <button class="product__btn add__product">Add To Cart</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="./JS/main.js"></script>
+    <script src="./JS/CallAPI.js"></script>
+    <script src="./JS/single_page.js"></script>
+  </body>
+</html>
