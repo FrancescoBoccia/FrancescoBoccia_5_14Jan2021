@@ -70,7 +70,7 @@ function cartNumbers(products) {
 }
 
 // Set items inside local storage
-function setItems(products) {
+function setItems() {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
@@ -99,7 +99,7 @@ function totalCost(productPrice) {
   if (cartCost != null) {
     cartCost = parseInt(cartCost);
     // console.log(cartCost / 100);
-    localStorage.setItem("totalCost", cartCost  + totalPrice);
+    localStorage.setItem("totalCost", cartCost + totalPrice);
   } else {
     localStorage.setItem("totalCost", totalPrice);
   }
@@ -120,7 +120,9 @@ function displayCart() {
         <img src="${item.imageUrl}" width= 200>
         <span class = "item__name">${item.name}</span>
         <div class = "price">$${item.price / 100},00 (${item.inCart})</div>
-        <div class = "total__cart"> $${item.inCart * (item.price / 100)},00</div>
+        <div class = "total__cart"> $${
+          item.inCart * (item.price / 100)
+        },00</div>
         </div>
         `;
     });
@@ -133,6 +135,6 @@ function displayCart() {
     `;
   }
 }
+
 onLoadCartNumber(); // Number of products is the same even if refreshed
 displayCart(); // Run this function straight away
-showProduct();

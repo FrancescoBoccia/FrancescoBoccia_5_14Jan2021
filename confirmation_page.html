@@ -18,44 +18,36 @@
     <header class="l-header">
       <nav class="nav bd-grid">
             <div>
-                <a href="#" class="nav__logo">TEDDY</a>
+                <a href="index.html" class="nav__logo">TEDDY</a>
             </div>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="#Teddy__Products" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link">Products</a></li>
                 </ul>
             </div>
 
             <div class="cart">
-                <a href="cart.html" class="cart__page"><i class='bx bx-cart nav__cart' ><span class="cart__number">0</span></i></a>
                 <i class='bx bx-menu nav__toggle' id="nav-toggle" ></i>
             </div>
         </nav>
     </header>
 
-<!-- HOME -->
-    <section class="home" id="home">
-        <div class="home__container bd-grid">
-            <div class="home__data">
-                <h1 class="home__title">NEW<br><span>TEDDY BEAR</span></h1>
-                <a href="#Teddy__Products" class="button button__bigger">GO SHOPPING</a>
-            </div>
-
-            <img src="images/teddy_big.png" alt="Big Teddy" class="home__img">
-        </div>
-    </section>
+    <section class="confirmation__container"> 
+        <h1 class="confirmation__thanks"> 
+            Thank's for ordering our lovely TEDDY!
+        </h1>
+  
+        <p class="confirmation__id">Order Id : <span></span></p>  
+        <p class="confirmation__price">Total Price : <span></span></p> 
+      </section>
 
 
-    <main>
-        <div class="products__container"></div>
-    </main>
 
+      <!-- FOOTER -->
 
-<!-- FOOTER -->
-
-    <footer class="footer section">
+    <footer class="footer section footer__confirmation">
         <div class="footer__container bg-grid">
             <div class="footer__box">
                 <h3 class="footer__teddy">TEDDY</h3>
@@ -64,8 +56,8 @@
             <div class="footer__box">
                 <h3 class="footer__title">EXPLORE</h3>
                 <ul>
-                    <li><a href="#" class="footer__link">Home</a></li>
-                    <li><a href="#Teddy__Products" class="footer__link">Products</a></li>
+                    <li><a href="index.html" class="footer__link">Home</a></li>
+                    <li><a href="index.html" class="footer__link">Products</a></li>
                 </ul>
             </div>
 
@@ -80,9 +72,9 @@
             <div class="footer__box">
                 <h3 class="footer__title">FOLLOW</h3>
                 <ul class="social">
-                    <li><a href="#" class="footer__social"><i class='bx bxl-facebook-square'></i></a></li>
-                    <li><a href="#" class="footer__social"><i class='bx bxl-instagram' ></i></a></li>
-                    <li><a href="#" class="footer__social"><i class='bx bxl-twitter' ></i></a></li>
+                    <li><a href="confirmation_page.html" class="footer__social"><i class='bx bxl-facebook-square'></i></a></li>
+                    <li><a href="confirmation_page.html" class="footer__social"><i class='bx bxl-instagram' ></i></a></li>
+                    <li><a href="confirmation_page.html" class="footer__social"><i class='bx bxl-twitter' ></i></a></li>
                 </ul>
             </div>
 
@@ -90,7 +82,7 @@
     </footer>
 
     <script src="JS/CallAPI.js"></script>
-    <script src="JS/index.js"></script>
-    <script src="JS/main.js"></script>
+    <script src="JS/confirmation_page.js"></script>
+    <script src="JS/validation_data.js"></script>
   </body>
 </html>

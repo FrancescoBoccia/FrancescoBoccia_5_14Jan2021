@@ -1,4 +1,4 @@
-const articlesContainer = document.querySelector(".articles__container");
+const productsContainer = document.querySelector(".products__container");
 
 // Call API
 getData()
@@ -15,7 +15,7 @@ function displayList(apiData) {
   apiData.forEach((item) => {
     let linkEl = document.createElement("a");
     linkEl.setAttribute("href", `single_page.html?id=${item._id}`);
-    linkEl.classList.add("article__container");
+    linkEl.classList.add("product__container");
     linkEl.innerHTML = `
     <div class="collection__container">
 
@@ -31,6 +31,6 @@ function displayList(apiData) {
         </div>
     </div>`;
 
-    articlesContainer.appendChild(linkEl);
+    productsContainer.appendChild(linkEl);
   });
 }
