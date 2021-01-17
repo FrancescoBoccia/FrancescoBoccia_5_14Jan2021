@@ -66,28 +66,23 @@ function cartNumbers(products) {
     document.querySelector(".cart span").textContent = 1;
   }
 
-  setItems(products);
+  updateCart();
 }
 
 // Set items inside local storage
-function setItems() {
-  let cartItems = localStorage.getItem("productsInCart");
-  cartItems = JSON.parse(cartItems);
+let cartItems = JSON.parse(localStorage.getItem("productsInCart")) || [];
+const productToLoad = window.location.href.split("=")["1"];
+let getProductById = "";
 
-  if (cartItems != null) {
-    if (cartItems[getProductById.name] == undefined) {
-      cartItems = {
-        ...cartItems,
-        [getProductById.name]: getProductById,
-      };
-    }
-    cartItems[getProductById.name].inCart += 1;
-  } else {
-    getProductById.inCart = 1;
-    cartItems = {
-      [getProductById.name]: getProductById,
-    };
-  }
+function updateCart() {
+  let item = {
+    name: getProductById.name,
+    _id: getProductById._id,
+    price: getProductById.price,
+    imgUrl: `${getProductById.imageUrl}`,
+  };
+
+  cartItems.push(item);
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
@@ -117,12 +112,10 @@ function displayCart() {
       productContainer.innerHTML += `
       <div class="product__JS">
         <i class='bx bxs-x-circle'></i>
-        <img src="${item.imageUrl}" width= 200>
+        <img src="${item.imgUrl}" width= 200>
         <span class = "item__name">${item.name}</span>
-        <div class = "price">$${item.price / 100},00 (${item.inCart})</div>
-        <div class = "total__cart"> $${
-          item.inCart * (item.price / 100)
-        },00</div>
+        <div class = "price">$${item.price / 100},00</div>
+        <div class = "total__cart"> $${item.price / 100},00</div>
         </div>
         `;
     });
@@ -131,7 +124,7 @@ function displayCart() {
       <div class = "basketTotalContainer">
         <h4 class = "totalTitle">Basket Total</h4>
         <h4 class = "basketTotal"> $${cartCost},00</h4>
-      </diV>
+      </div>
     `;
   }
 }

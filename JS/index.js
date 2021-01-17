@@ -1,3 +1,5 @@
+"use script";
+
 const productsContainer = document.querySelector(".products__container");
 
 // Call API

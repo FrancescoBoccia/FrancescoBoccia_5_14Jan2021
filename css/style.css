@@ -167,6 +167,61 @@ img {
     text-align: center;
     margin-left: 2.7rem;
   }
+
+  .validation__title{
+    margin-top: 120px;
+    text-align: center;
+  }
+  .validation__container{
+    text-align: center;
+  }
+
+  .form__validate-btn{
+    margin:15px 0 0 40px;
+    background-color: var(--first-color);
+    padding: 5px;
+  }
+
+  small {
+    visibility: hidden;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 4px;
+  }
+
+  .form-data.error small {
+    visibility: visible;
+  }
+
+  .form__validate-btn:hover{
+    background-color: var(--first-color-alt);
+  }
+
+  .footer__confirmation{
+    margin-top: 70px;
+    height: 100px;
+  }
+
+  #form {
+    margin-bottom: 20px;
+  }
+
+  .confirmation__container{
+    margin-left: 20px;
+  }
+
+  .confirmation__thanks{
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  .confirmation__price {
+    font-weight: bold;
+  }
+  .confirmation__id{
+    font-weight: bold;
+    margin-right: 58px;
+  }
+
 }
 
 .nav__item {
@@ -471,6 +526,7 @@ img {
   border-bottom: 1px solid black;
 }
 
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 1024px) {
   .nav__logo {
@@ -637,8 +693,8 @@ img {
   }
 
   .nav__home__cart {
-    margin-right: 29rem;
-    margin-left: 25rem;
+    margin-right: 28.5rem;
+    margin-left: 28rem;
   }
 
   .nav__cart {
@@ -698,10 +754,49 @@ img {
     border: 2px solid red;
   }
 
+  
+  .validation__title{
+    font-size: 2rem;
+    margin-top: 12.5rem;
+    text-align: center;
+  }
+  .validation__container{
+    font-size: 25px;
+    text-align: center;
+  }
+  
+  input {
+    font-size: 20px;
+  }
+
+  .form__validate-btn{
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: var(--first-color);
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  
+  .form__validate-btn:hover{
+    background-color: var(--first-color-alt);
+  }
+
+  small {
+    visibility: hidden;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
+  .form-data.error small {
+    visibility: visible;
+  }
+
   .footer__confirmation{
     margin-top: 420px;
   }
-
+  
   .confirmation__container{
     text-align: center;
     position: absolute;
@@ -716,6 +811,5 @@ img {
   }
   .confirmation__id{
     font-weight: bold;
-    margin-right: 58px;
   }
 }

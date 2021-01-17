@@ -6,10 +6,6 @@ const productColor = document.querySelector(".product__colors-selection");
 const productDetails = document.querySelector(".product__details");
 const productPrice = document.querySelector(".product__price");
 
-let cartDetails = JSON.parse(localStorage.getItem("productsInCart")) || [];
-const productToLoad = window.location.href.split("=")["1"];
-let getProductById= "";
-
 // Call API and store response inside array. Display some results on UI
 getData()
   .then(function (response) {
@@ -25,7 +21,6 @@ getData()
 
 // Load product page with clicked item on homepage
 function loadProductPage(apiData) {
-  
   productName.textContent = getProductById.name;
   productDetails.textContent = getProductById.description;
   productPrice.textContent = `${getProductById.price / 100 + ",00 $"}`;
@@ -43,14 +38,11 @@ function loadProductPage(apiData) {
   });
 }
 
-
 function cartUpdate() {
   let item = {
     inCart: 0,
-  }
+  };
 
   cartDetails.push(item);
-  localStorage.setItem("productsInCart", JSON.stringify(cartDetails))
+  localStorage.setItem("productsInCart", JSON.stringify(cartDetails));
 }
-
-

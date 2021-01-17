@@ -1,3 +1,5 @@
+"use script";
+
 // Validation Order
 
 const myForm = document.getElementById("form");
@@ -14,6 +16,8 @@ const btnValidation = document.querySelector(".form__validate-btn");
 function showError(input, message) {
   const formControl = input.parentElement;
   formControl.className = "form-data error";
+  const small = document.querySelector("small");
+  small.innerText = message;
 }
 
 // Display Green Outline Input
@@ -28,7 +32,7 @@ function checkEmail(input) {
   if (regex.test(input.value.trim())) {
     showSuccess(input);
   } else {
-    showError(input, "E-mail invalide");
+    showError(input, "This section is mandatory");
   }
 }
 
@@ -89,9 +93,9 @@ function formatRequestData() {
   });
 
   // Product_id formatting
-  let productsObject = localStorage.getItem("productsInCart");
+  let productsObject = JSON.parse(localStorage.getItem("productsInCart"));
   let products = [];
-  Array.prototype.forEach.call (productsObject, item => {
+  Array.prototype.forEach.call(productsObject, (item) => {
     products.push(item);
   });
   postRequest = { contact, products };
@@ -102,7 +106,7 @@ function formatRequestData() {
 // POST request function
 function postData() {
   var req = new XMLHttpRequest();
-  req.open("POST", "http://localhost:3000/api/teddies");
+  req.open("POST", "http://localhost:3000/api/teddies/order");
   req.setRequestHeader("Content-Type", "application/json");
   req.send(JSON.stringify(postRequest));
 
