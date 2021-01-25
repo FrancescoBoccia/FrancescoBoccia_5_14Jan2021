@@ -6,4 +6,4 @@ const confirmationId = document.querySelector(".confirmation__id span");
 confirmationPrice.textContent = localStorage.getItem("totalCost") + ",00 $";
 confirmationId.textContent = localStorage.getItem("orderId");
 
-// localStorage.clear();
+localStorage.clear();
