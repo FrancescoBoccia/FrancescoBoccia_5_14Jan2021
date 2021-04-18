@@ -1,6 +1,6 @@
-Clone this repository
+# Clone this repository
 
-Server: 
+# Server: 
 
 ```
 cd Back-end
@@ -8,7 +8,7 @@ npm install
 node server.js
 ```
 
-Front-end:
+# Front-end:
 
 ```
 cd FrancescoBoccia_5_14Jan2021
