@@ -1,5 +1,19 @@
-Installation
-Clone this repo. From within the project folder, run npm install. 
-You can then run the server with node server from within the "backend" subfolder. 
-The server should run on localhost with default port 3000. 
-If the server runs on another port for any reason, this is printed to the console when the server starts, e.g. Listening on port 3001.
+Clone this repository
+
+Server: 
+
+"
+cd Back-end
+npm install
+node server.js
+"
+
+Front-end:
+
+"
+cd FrancescoBoccia_5_14Jan2021
+npm install
+npm start
+"
+
+Then open on any web browser : http://localhost:3001/index.html
